@@ -1,0 +1,96 @@
+Plan for IVS Project - CALCULATOR
+Team NGLYD
+
+AUTHORS:    xfignam00
+            xmalegt00
+            xnovakf00
+            xskovaj00
+
+GENERAL AGREEMENTS:
+    Programming language -> C++
+    Documentation and comments language -> english
+    Indentation -> 4 spaces
+    Environment -> LINUX UBUNTU 64
+
+COMMUNICATION CHANNELS:
+    Discord server
+        Special discord server is set up with specific rooms for each part of the project.
+        Division of rooms to general communication, logs, global decisions, further division into threads.
+        Discord will be also used for voice communication between members.
+        Rules:
+            Every member must check the server at least once a day.
+            Compulsory reactions to important messages (with emoji on the message). 
+            Important messages will include tag of all members.
+            In agreed time before deadline all members will check the part of the project and give feedback.
+            During voice calls there is one selected member that will write down important things said.
+            Problematics of specific task are discussed in assigned room.
+            Key words for easy lookup are used. These include but are not limited to: UPDATE, BUG, ISSUES, DECISION...
+    Telephone
+        When a member is radio-silent for more than 2 days, every member has the right to contact him via telephone.
+        Each member has the phone number to all others.
+    Email
+        All members have email addresses of all others. Will be used when Discord will be insufficient.
+OTHER TOOLS:
+    Doodle
+        Used for marking free time where members are available for calls.
+    GitHub planner
+        Used for tracking deadlines and completion of project.
+
+DEADLINES:
+    12.03.2024 - Finalisation of plan, setting up discord server and GitHub.
+    16.03.2024 - Readme.
+    17.03.2024 - Completed specification on chosen functions of the calculator.
+    20.03.2024 - Design of connection of GUI and math library.
+    23.03.2024 - Initial mockup of GUI.
+    26.03.2024 - Header file for math library.
+    31.03.2024 - Tests for math library.
+    07.04.2024 - Completion of math library and GUI.
+    14.04.2024 - Standard deviation and profiling.
+    17.04.2024 - Connection of GUI and math library completed.
+    21.04.2024 - Installer, Uninstaller, Makefile completed.
+    22.04.2024 - Final testing.
+    23.04.2024 - Documentation completed.
+    25.04.2024 - Handover of project.
+    07.05.2024 - Presentation and evaluation completed.
+
+TASKS FOR MEMBERS:
+    GROUP:
+        Creating plan of project
+        Doxyfile
+        Continous checking of codes of other members
+        Evaluation of global decisions
+        Evaluation of other team members and whole project
+        Final testing
+        Presentation
+        Debugging
+    
+    xfignam00
+        User Documentation
+        Installer and Uninstaller
+        Makefile
+        Implementation of math library (pair programming with xmalegt00)
+    
+    xmalegt00
+        Math library header file
+        Implementation of math library (pair programming with xfignam00)
+        Design and implementation of connection of GUI and math library (consultations with xskovaj00)
+    
+    xnovakf00
+        Completion of plan
+        GitHub initialisation
+        Discord initialisation
+        Math library Tests
+        Standard deviation and profiling
+        Readme file
+
+    xskovaj00
+        Mockup and design of GUI
+        Implementation of GUI
+        Design and implementation of connection of GUI and math library (consultations with xmalegt00)
+
+Versing system
+    GIT
+Repository 
+    Is hosted on GitHub at address: https://github.com/fifixsandy/Proj2-NGLYD by team leader privately, all members
+    of team have access. 
+    User ivskontrola will be added as well with full read rights.
