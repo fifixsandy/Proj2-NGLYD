@@ -15,6 +15,7 @@ GENERAL AGREEMENTS:
                                     xxx
                                     xxx
                                  }
+    Variable naming convection -> camelCase
 
 COMMUNICATION CHANNELS:
     Discord server
