@@ -11,6 +11,10 @@ GENERAL AGREEMENTS:
     Documentation and comments language -> english
     Indentation -> 4 spaces
     Environment -> LINUX UBUNTU 64
+    Function parentheses -> foo(){
+                                    xxx
+                                    xxx
+                                 }
 
 COMMUNICATION CHANNELS:
     Discord server
