@@ -15,7 +15,7 @@ GENERAL AGREEMENTS:
                                     xxx
                                     xxx
                                  }
-    Variable naming convection -> camelCase
+    Variable naming convention -> camelCase
 
 COMMUNICATION CHANNELS:
     Discord server
@@ -39,7 +39,7 @@ OTHER TOOLS:
     Doodle
         Used for marking free time where members are available for calls.
     GitHub planner
-        Used for tracking deadlines and completion of project.
+        Will be setup and used for tracking deadlines and completion of project.
 
 DEADLINES:
     12.03.2024 - Finalisation of plan, setting up discord server and GitHub.
