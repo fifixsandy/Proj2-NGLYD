@@ -1,19 +1,38 @@
-Prostredi
+Name
+---------
+
+NGLYD Calculator
+
+Description
+---------
+
+NGLYD Calculator has been created as a project for IVS course at Faculty of Information Technology, Brno University of Technology.
+It supports basic instructions, such as: +, -, *, /,
+            and some advanced instructions: nth power, square root, nth root, factorial, modulo.
+You can operate it using buttons in GUI, or using your keyboard.
+For more information refer to our user documentation.
+
+Screenshot
+---------
+
+ADD SCREENSHOT OF GUI HERE
+
+Environment
 ---------
 
 Ubuntu 64bit
-Windows 64bit
 
-Autori
+
+Authors
 ------
 
-Nazev tymu
-- xlogin01 jmeno prijmeni 
-- xlogin02 jmeno prijmeni 
-- xlogin03 jmeno prijmeni 
-- xlogin04 jmeno prijmeni 
+NGLYD
+- xfignam00 Matúš Fignár 
+- xmalegt00 Tibor Malega 
+- xnovakf00 Filip Novák 
+- xskovaj00 Ján Skovajsa 
 
-Licence
+License
 -------
 
-Tento program je poskytovan...
+This programm is licensed under the GNU General Public License v3.0
