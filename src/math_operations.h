@@ -61,7 +61,7 @@ public:
     * @param a Double operand.
     * @return The result of square root of a as a double.
     */ 
-    double squareRoot(double a); //possibly unnecessary
+    double squareRoot(double a);
 
     /**
     * @brief Performs factorial of a double.   
@@ -75,19 +75,19 @@ public:
     * @brief Performs nth power of two doubles.  
     * 
     * @param a The first double operand (base).
-    * @param n The second double operand (exponent).
+    * @param n The second int operand (exponent).
     * @return The n-th power of a as a double.
     */ 
-    double nthPower(double a, double n); // n maybe int?
+    double nthPower(double a, int n);
 
     /**
-    * @brief Performs nth root of two doubles.  
+    * @brief Performs nth root of double and int.  
     * 
     * @param a The first double operand (radicand).
-    * @param n The second double operand (root).
+    * @param n The second int operand (root).
     * @return The n-th root of a as a double.
     */ 
-    double nthRoot(double a, double n);
+    double nthRoot(double a, int n);
 
     /**
     * @brief Calculates the remainder by dividing two doubles.  
