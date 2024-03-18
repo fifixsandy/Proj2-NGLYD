@@ -64,15 +64,15 @@ public:
     double squareRoot(double a);
 
     /**
-    * @brief Performs factorial of a double.   
+    * @brief Performs factorial of an int.   
     * 
-    * @param a Double operand.
+    * @param a Int operand.
     * @return The factorial of a as an unsigned long long.
     */ 
-    unsigned long long factorial(double a);
+    unsigned long long factorial(int a);
         
     /**
-    * @brief Performs nth power of two doubles.  
+    * @brief Performs nth power of a double and int.  
     * 
     * @param a The first double operand (base).
     * @param n The second int operand (exponent).
@@ -90,18 +90,20 @@ public:
     double nthRoot(double a, int n);
 
     /**
-    * @brief Calculates the remainder by dividing two doubles.  
+    * @brief Calculates the remainder by dividing two ints.  
     * 
-    * @param a The first double operand (dividend).
-    * @param b The second double operand (divisor).
+    * @param a The first int operand (dividend).
+    * @param b The second int operand (divisor).
     * @return The remainder of a divided by b as an int.
     */ 
-    int modulo(double a, double b);
+    int modulo(int a, int b);
     
 private:
 
 };
 
 #define MATH_ERROR -1.0
+#define DivisionByZero "ERROR: Division by zero"
+#define NegativeInRoot "ERROR: Root of negative number"
 
 #endif //MATH_OPERATIONS_H
