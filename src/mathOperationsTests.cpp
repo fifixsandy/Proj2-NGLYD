@@ -12,3 +12,44 @@
  */
 
 #include "math_operations.h"
+#define CATCH_CONFIG_MAIN
+#include "catch.hpp"
+
+MathOps m;
+
+
+TEST_CASE("ADD", "zero or positive"){
+    REQUIRE(m.add(0, 0) == 0);
+    REQUIRE(m.add(0, 1) == 1);
+    REQUIRE(m.add(0, 0.9) == 0.9);
+
+    REQUIRE(m.add(12, 50) == 72);
+    REQUIRE(m.add(7758, 22688) == 30446);
+    
+    REQUIRE(m.add(0.5, 0.5) == 1);
+    REQUIRE(m.add(7.2565489, 2.564056465) == 9.820605365);
+}
+
+TEST_CASE("ADD", "negative"){
+    REQUIRE(m.add(0, -5) == -5);
+    REQUIRE(m.add(0, -1) == -1);
+    REQUIRE(m.add(0, -0.9) == -0.9);
+
+    REQUIRE(m.add(12, -50) == -38);
+    REQUIRE(m.add(7758, -22688) == -14930);
+    
+    REQUIRE(m.add(0.5, -0.5) == 0);
+    REQUIRE(m.add(-7.2565489, 2.564056465) == -4.692492435);
+
+    REQUIRE(m.add(-5, -568.2) == -573.2);
+}
+
+TEST_CASE("SUBSTRACT", "zero or positive"){
+    REQUIRE(m.subtract(0, 0) == 0);
+    REQUIRE(m.subtract(0, 1) == -1);
+    REQUIRE(m.subtract(0, 0.9) == -0.9);
+
+    REQUIRE(m.subtract(20.5, 0.5) == 20);
+    REQUIRE(m.subtract(565, 0.2) == 564.8);
+    REQUIRE(m.subtract(100, 150.965489) == -50.965489);
+}
