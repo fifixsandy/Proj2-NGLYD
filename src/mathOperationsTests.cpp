@@ -53,3 +53,12 @@ TEST_CASE("SUBSTRACT", "zero or positive"){
     REQUIRE(m.subtract(565, 0.2) == 564.8);
     REQUIRE(m.subtract(100, 150.965489) == -50.965489);
 }
+
+TEST_CASE("SUBTRACT", "negative"){
+    REQUIRE(m.subtract(0,-2) == 2);
+    REQUIRE(m.subtract(18,-5) == 23);
+    REQUIRE(m.subtract(-125.56, -125.56) == 0);
+    REQUIRE(m.subtract(-896.12, -800.12) == 96);
+    
+    REQUIRE(m.subtract(158.356, -126.1894) == 284.5454);
+}
