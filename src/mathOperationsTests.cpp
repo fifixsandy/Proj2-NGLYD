@@ -225,3 +225,16 @@ TEST_CASE("FACTORIAL", "valid"){
 TEST_CASE("FACTORIAL", "invalid"){
 
 }
+
+TEST_CASE("MODULO", "valid"){
+    REQUIRE(m.modulo(7,3) == 1);
+    REQUIRE(m.modulo(10,5) == 0);
+    REQUIRE(m.modulo(15,4) == 3);
+    REQUIRE(m.modulo(20,7) == 6);
+    REQUIRE(m.modulo(25,6) == 1);
+    REQUIRE(m.modulo(30,8) == 6);
+    REQUIRE(m.modulo(35,9) == 8);
+    REQUIRE(m.modulo(40,11) == 7);
+    REQUIRE(m.modulo(45,12) == 9);
+    REQUIRE(m.modulo(50,13) == 11);
+}
