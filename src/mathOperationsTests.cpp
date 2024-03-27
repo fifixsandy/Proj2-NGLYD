@@ -226,7 +226,7 @@ TEST_CASE("FACTORIAL", "invalid"){
 
 }
 
-TEST_CASE("MODULO", "valid"){
+TEST_CASE("MODULO", "valid numbers"){
     REQUIRE(m.modulo(7,3) == 1);
     REQUIRE(m.modulo(10,5) == 0);
     REQUIRE(m.modulo(15,4) == 3);
@@ -238,3 +238,22 @@ TEST_CASE("MODULO", "valid"){
     REQUIRE(m.modulo(45,12) == 9);
     REQUIRE(m.modulo(50,13) == 11);
 }
+
+TEST_CASE("MODULO", "zero divident"){
+    REQUIRE(m.modulo(0,13) == 0);
+    REQUIRE(m.modulo(0,6) == 0);
+    REQUIRE(m.modulo(0,8) == 0);
+    REQUIRE(m.modulo(0,9) == 0);
+    REQUIRE(m.modulo(0,11) == 0);  
+}
+
+/* TODO - ERROR CHECKING*/
+TEST_CASE("MODULO", "zero divisor"){
+
+}
+
+/* TODO - ERROR CHECKING*/
+TEST_CASE("MODULO", "invalid numbers"){
+
+}
+
