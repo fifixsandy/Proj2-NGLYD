@@ -2,8 +2,12 @@
  * @file mathLibTests.cpp
  * 
  * @brief Performs tests on math operations from math_operations.h.
- *  This file is used for testing all operations library. It tests basic cases as well as edgecases, which might 
- *  possibly give incorrect result. It also tests incorrect inputs and if they are handled properly.
+ * 
+ *  This file is used for testing all operations from math_operations.h library. It tests basic cases as well as 
+ *  edgecases, which might possibly give incorrect result. It also tests incorrect inputs and if they are handled properly.
+ * 
+ *  These tests are implemented with Catch2 testing framework using its one-header-file version which is easy to incorporate
+ *  into project. The license for this header file is appended in the project.
  * 
  * @author xfignam00
  * @author xmalegt00
