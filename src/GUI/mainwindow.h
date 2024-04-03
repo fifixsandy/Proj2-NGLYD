@@ -3,7 +3,13 @@
 
 #include <QMainWindow>
 #include <QGraphicsDropShadowEffect>
-#include <QDebug>
+#include <QRegularExpressionValidator>
+
+
+
+#define DEBUG
+
+
 
 QT_BEGIN_NAMESPACE
 namespace Ui {
@@ -17,11 +23,16 @@ class MainWindow : public QMainWindow
 
 public:
     MainWindow(QWidget *parent = nullptr);
-    void AddShadowButtons();
+
     ~MainWindow();
 
+private slots:
+    void TestButtonPrint();
+
 private:
+    QGraphicsDropShadowEffect* CreateShadow();
     Ui::MainWindow *ui;
-    QGraphicsDropShadowEffect *DropShadowEffect;
+    void AddShadowToButtons();
+    void ConfDisplay();
 };
 #endif // MAINWINDOW_H
