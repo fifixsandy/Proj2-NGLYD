@@ -1,0 +1,7 @@
+<RCC>
+    <qresource prefix="/">
+        <file>icons/sqaure_root.png</file>
+        <file>icons/power_n.png</file>
+        <file>icons/root_n.png</file>
+    </qresource>
+</RCC>
