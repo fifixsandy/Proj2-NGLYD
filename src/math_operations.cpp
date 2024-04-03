@@ -1,1 +1,63 @@
-//soonG
+#include "math_operations.h"
+#include <cmath> 
+
+
+double MathOps::add(double a, double b) {
+    return a + b;
+}
+
+double MathOps::subtract(double a, double b) {
+    return a - b;
+}
+
+double MathOps::divide(double a, double b, MathErrorCode &errCode) {
+    if (b == 0) {
+        errCode = DIVISION_BY_ZERO;
+        return 0; 
+    } 
+    return a / b;
+}
+
+double MathOps::multiply(double a, double b) {
+    return a * b;
+}
+
+double MathOps::squareRoot(double a, MathErrorCode &errCode) {
+    if (a < 0) {
+        errCode = NEGATIVE_ROOT_INPUT;
+        return 0;
+    }
+    return sqrt(a);
+}
+
+unsigned long long MathOps::factorial(int a, MathErrorCode &errCode) {
+    if (a < 0) {
+        errCode = NEGATIVE_FACTORIAL_INPUT;
+        return 0;
+    }
+    unsigned long long result = 1;
+    for (int i = 1; i <= a; ++i) {
+        result *= i;
+    }
+    return result;
+}
+
+double MathOps::nthPower(double a, int n) {
+    return pow(a, n);
+}
+
+double MathOps::nthRoot(double a, int n, MathErrorCode &errCode) {
+    if (a < 0 && n % 2 == 0) {
+        errCode = NEGATIVE_ROOT_INPUT;
+        return 0;
+    }
+    return pow(a, 1.0 / n);
+}
+
+int MathOps::modulo(int a, int b, MathErrorCode &errCode) {
+    if (b == 0) {
+        errCode = DIVISION_BY_ZERO;
+        return 0;
+    }
+    return a % b;
+}
