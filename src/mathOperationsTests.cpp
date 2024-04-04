@@ -143,47 +143,91 @@ TEST(SQUARE_ROOT, negative){
     MathErrorCode ERR = SUCCESS;
     EXPECT_EQ(m.squareRoot(-2, ERR) , 0);
     EXPECT_EQ(ERR, NEGATIVE_ROOT_INPUT);
-
+    ERR = SUCCESS;
     EXPECT_EQ(m.squareRoot(-254454, ERR) , 0);
     EXPECT_EQ(ERR, NEGATIVE_ROOT_INPUT); 
-
+    ERR = SUCCESS;
     EXPECT_EQ(m.squareRoot(-0.485454, ERR) , 0);
     EXPECT_EQ(ERR, NEGATIVE_ROOT_INPUT);
-
+    ERR = SUCCESS;
     EXPECT_EQ(m.squareRoot(-58.54545444, ERR) , 0);
     EXPECT_EQ(ERR, NEGATIVE_ROOT_INPUT);
 }
 
-/* TODO - ERROR CHECKING */
+/* 
+    @todo Replace non equal with better ERROR code. 
+*/
 TEST(NTH_ROOT, notNaturalRoot){
+    MathErrorCode ERR = SUCCESS;
+    EXPECT_EQ(m.nthRoot(156, 0.8, ERR) , 0);
+    EXPECT_NE(ERR, SUCCESS);
+    ERR = SUCCESS;
 
+    EXPECT_EQ(m.nthRoot(0, 0.544, ERR) , 0);
+    EXPECT_NE(ERR, SUCCESS);
+    ERR = SUCCESS;
+
+    EXPECT_EQ(m.nthRoot(-15.5, -45.5, ERR) , 0);
+    EXPECT_NE(ERR, SUCCESS);
+    ERR = SUCCESS;
+
+    EXPECT_EQ(m.nthRoot(-55, -561, ERR) , 0);
+    EXPECT_NE(ERR, SUCCESS);   
 }
 
 TEST(NTH_ROOT, zero){
-    EXPECT_EQ(m.nthRoot(0, 2) , 0);
-    EXPECT_EQ(m.nthRoot(0, 5) , 0);
-    EXPECT_EQ(m.nthRoot(0, 99) , 0);
+    MathErrorCode ERR = SUCCESS;
+    EXPECT_EQ(m.nthRoot(0, 2, ERR) , 0);
+    EXPECT_EQ(ERR, SUCCESS);
+
+    EXPECT_EQ(m.nthRoot(0, 5, ERR) , 0);
+    EXPECT_EQ(ERR, SUCCESS);
+
+    EXPECT_EQ(m.nthRoot(0, 99, ERR) , 0);
+    EXPECT_EQ(ERR, SUCCESS);
 }
 
 TEST(NTH_ROOT, evenAndPositive){
-    EXPECT_EQ(m.nthRoot(2401, 4) , 7);
-    EXPECT_EQ(m.nthRoot(244.140625, 6) , 2.5);
-    EXPECT_EQ(m.nthRoot(9756, 12) , 2.15);
+    MathErrorCode ERR = SUCCESS;
+    EXPECT_EQ(m.nthRoot(2401, 4, ERR) , 7);
+    EXPECT_EQ(ERR, SUCCESS);
+
+    EXPECT_EQ(m.nthRoot(244.140625, 6, ERR) , 2.5);
+    EXPECT_EQ(ERR, SUCCESS);
+
+    EXPECT_EQ(m.nthRoot(9756, 12, ERR) , 2.15);
+    EXPECT_EQ(ERR, SUCCESS);
 }
 
-/* TODO - ERROR CHECKING */
 TEST(NTH_ROOT, evenAndNegative){
+    MathErrorCode ERR = SUCCESS;
+    EXPECT_EQ(m.nthRoot(-45, 4, ERR), 0);
+    EXPECT_EQ(ERR, NEGATIVE_ROOT_INPUT);
+    ERR = SUCCESS;
 
+    EXPECT_EQ(m.nthRoot(-0.5646, 28, ERR), 0);
+    EXPECT_EQ(ERR, NEGATIVE_ROOT_INPUT);
+    ERR = SUCCESS;
+
+    EXPECT_EQ(m.nthRoot(-9.24566, 156, ERR), 0);
+    EXPECT_EQ(ERR, NEGATIVE_ROOT_INPUT);   
 }
 
 TEST(NTH_ROOT, odd){
-    EXPECT_EQ(m.nthRoot(27,3) , 3);
-    EXPECT_EQ(m.nthRoot(97.65625, 5) , 2.5);
-    EXPECT_EQ(m.nthRoot(0.000000001, 9) , 0.1);
+    MathErrorCode ERR = SUCCESS;
+    EXPECT_EQ(m.nthRoot(27,3,ERR) , 3);
+    EXPECT_EQ(ERR, SUCCESS);
+    EXPECT_EQ(m.nthRoot(97.65625, 5,ERR) , 2.5);
+    EXPECT_EQ(ERR, SUCCESS);
+    EXPECT_EQ(m.nthRoot(0.000000001, 9,ERR) , 0.1);
+    EXPECT_EQ(ERR, SUCCESS);
     
-    EXPECT_EQ(m.nthRoot(-27,3) , -3);
-    EXPECT_EQ(m.nthRoot(-97.65625, 5) , -2.5);
-    EXPECT_EQ(m.nthRoot(-0.000000001, 9) , -0.1);
+    EXPECT_EQ(m.nthRoot(-27,3,ERR) , -3);
+    EXPECT_EQ(ERR, SUCCESS);
+    EXPECT_EQ(m.nthRoot(-97.65625, 5,ERR) , -2.5);
+    EXPECT_EQ(ERR, SUCCESS);
+    EXPECT_EQ(m.nthRoot(-0.000000001, 9,ERR) , -0.1);
+    EXPECT_EQ(ERR, SUCCESS);
 }
 
 TEST(NTH_POWER, zeroAndOne){
