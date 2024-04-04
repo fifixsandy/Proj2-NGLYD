@@ -277,21 +277,45 @@ TEST(NTH_POWER, invalidExponent){
 }
 
 TEST(FACTORIAL, zero){
-    EXPECT_EQ(m.factorial(0) , 1);
+    MathErrorCode ERR = SUCCESS;
+    EXPECT_EQ(m.factorial(0,ERR) , 1);
+    EXPECT_EQ(ERR, SUCCESS);
 }
 
 TEST(FACTORIAL, valid){
-    EXPECT_EQ(m.factorial(1) , 1);
-    EXPECT_EQ(m.factorial(2) , 2);
-    EXPECT_EQ(m.factorial(3) , 6);
-    EXPECT_EQ(m.factorial(6) , 720);
-    EXPECT_EQ(m.factorial(10) , 3628800);
-    EXPECT_EQ(m.factorial(17) , 355687428096000);
+    MathErrorCode ERR = SUCCESS;
+    EXPECT_EQ(m.factorial(1,ERR) , 1);
+    EXPECT_EQ(ERR, SUCCESS);
+    EXPECT_EQ(m.factorial(2,ERR) , 2);
+    EXPECT_EQ(ERR, SUCCESS);
+    EXPECT_EQ(m.factorial(3,ERR) , 6);
+    EXPECT_EQ(ERR, SUCCESS);
+    EXPECT_EQ(m.factorial(6,ERR) , 720);
+    EXPECT_EQ(ERR, SUCCESS);
+    EXPECT_EQ(m.factorial(10,ERR) , 3628800);
+    EXPECT_EQ(ERR, SUCCESS);
+    EXPECT_EQ(m.factorial(17,ERR) , 355687428096000);
+    EXPECT_EQ(ERR, SUCCESS);
 }
 
 /* TODO - ERROR CHECKING */
 TEST(FACTORIAL, invalid){
+    MathErrorCode ERR = SUCCESS;
+    EXPECT_EQ(m.factorial(-1,ERR), 0);
+    EXPECT_EQ(ERR, NEGATIVE_FACTORIAL_INPUT);
+    ERR = SUCCESS;
 
+    EXPECT_EQ(m.factorial(-5,ERR), 0);
+    EXPECT_EQ(ERR, NEGATIVE_FACTORIAL_INPUT);
+    ERR = SUCCESS;
+
+    EXPECT_EQ(m.factorial(-10,ERR), 0);
+    EXPECT_EQ(ERR, NEGATIVE_FACTORIAL_INPUT);
+    ERR = SUCCESS;
+
+    EXPECT_EQ(m.factorial(-55,ERR), 0);
+    EXPECT_EQ(ERR, NEGATIVE_FACTORIAL_INPUT);
+    ERR = SUCCESS;
 }
 
 TEST(MODULO, validNumbers){
