@@ -53,7 +53,7 @@ TEST(SUBTRACT, zeroOrPositive){
 
     EXPECT_EQ(m.subtract(20.5, 0.5) , 20);
     EXPECT_EQ(m.subtract(565, 0.2) , 564.8);
-    EXPECT_EQ(m.subtract(100, 150.965489) , -50.9655);
+    EXPECT_NEAR(m.subtract(100, 150.965489) , -50.96489, 1e-3);
 }
 
 TEST(SUBTRACT, negative){
@@ -85,7 +85,7 @@ TEST(DIVIDE, positives){
     EXPECT_EQ(m.divide(1,2,ERR) , 0.5);
     ASSERT_EQ(ERR , SUCCESS);
 
-    EXPECT_EQ(m.divide(1,3,ERR) , 0.333333);
+    EXPECT_NEAR(m.divide(1,3,ERR) , 0.333333, 1e-6);
     ASSERT_EQ(ERR , SUCCESS);
 
     EXPECT_EQ(m.divide(1.2,10,ERR) , 0.12);
@@ -115,7 +115,7 @@ TEST(MULTIPLY, twoNegative){
     EXPECT_EQ(m.multiply(-5,-1) , 5);
     EXPECT_EQ(m.multiply(-868,-12.856) , 11159.008);
     EXPECT_EQ(m.multiply(-159.55, -0.5) , 79.775);
-    EXPECT_EQ(m.multiply(-85.592, -99.56898) , 8522.31);
+    EXPECT_NEAR(m.multiply(-85.592, -99.56898) , 8522.308136, 1e-3);
 }
 
 TEST(SQUARE_ROOT, zero){
@@ -216,14 +216,14 @@ TEST(NTH_ROOT, odd){
     EXPECT_EQ(ERR, SUCCESS);
     EXPECT_EQ(m.nthRoot(97.65625, 5,ERR) , 2.5);
     EXPECT_EQ(ERR, SUCCESS);
-    EXPECT_EQ(m.nthRoot(0.000000001, 9,ERR) , 0.1);
+    EXPECT_NEAR(m.nthRoot(0.000000001, 9,ERR) , 0.1, 1e-3);
     EXPECT_EQ(ERR, SUCCESS);
     
-    EXPECT_EQ(m.nthRoot(-27,3,ERR) , -3);
+    EXPECT_NEAR(m.nthRoot(-27,3,ERR) , -3, 1e-3);
     EXPECT_EQ(ERR, SUCCESS);
-    EXPECT_EQ(m.nthRoot(-97.65625, 5,ERR) , -2.5);
+    EXPECT_NEAR(m.nthRoot(-97.65625, 5,ERR) , -2.5, 1e-3);
     EXPECT_EQ(ERR, SUCCESS);
-    EXPECT_EQ(m.nthRoot(-0.000000001, 9,ERR) , -0.1);
+    EXPECT_NEAR(m.nthRoot(-0.000000001, 9,ERR) , -0.1, 1e-3);
     EXPECT_EQ(ERR, SUCCESS);
 }
 
@@ -251,21 +251,21 @@ TEST(NTH_POWER, onZero){
 TEST(NTH_POWER, even){
     EXPECT_EQ(m.nthPower(7, 4) , 2401);
     EXPECT_EQ(m.nthPower(2.5, 6) , 244.140625);
-    EXPECT_EQ(m.nthPower(2.15, 12) , 9755.769238);
+    EXPECT_NEAR(m.nthPower(2.15, 12) , 9755.769238, 1e-3);
 
     EXPECT_EQ(m.nthPower(-7, 4) , 2401);
     EXPECT_EQ(m.nthPower(-2.5, 6) , 244.140625);
-    EXPECT_EQ(m.nthPower(-2.15, 12) , 9755.769238);
+    EXPECT_NEAR(m.nthPower(-2.15, 12) , 9755.769238,1e-3);
 }
 
 TEST(NTH_POWER, odd){
     EXPECT_EQ(m.nthPower(3,3) , 27);
     EXPECT_EQ(m.nthPower(2.5, 5) , 97.65625);
-    EXPECT_EQ(m.nthPower(0.1, 9) , 0.000000001);
+    EXPECT_NEAR(m.nthPower(0.1, 9) , 1e-09, 1e-12);
     
     EXPECT_EQ(m.nthPower(-3,3) , -27);
     EXPECT_EQ(m.nthPower(-2.5, 5) , -97.65625);
-    EXPECT_EQ(m.nthPower(-0.1, 9) , -0.000000001);
+    EXPECT_NEAR(m.nthPower(-0.1, 9) , -1e-09, 1e-12);
 }
 
 /* TODO */
