@@ -68,14 +68,15 @@ TEST(SUBTRACT, negative){
 
 /*  TODO - ADD ERROR CHECKING */
 TEST(DIVIDE, byZero){
-    m.divide(0, 0);
-    //EXPECT_EQ(ERR , 0);
-    //ERR=0;
-    m.divide(7, 0);
-    //EXPECT_EQ(ERR , 0);
-    //ERR=0;
-    m.divide(-58.265, 0);
-    //EXPECT_EQ(ERR , 0);
+    MathErrorCode ERR;
+    m.divide(0, 0, ERR);
+    EXPECT_EQ(ERR , DIVISION_BY_ZERO);
+    ERR=SUCCESS;
+    m.divide(7, 0, ERR);
+    EXPECT_EQ(ERR , DIVISION_BY_ZERO);
+    ERR=SUCCESS;
+    m.divide(-58.265, 0, ERR);
+    EXPECT_EQ(ERR , DIVISION_BY_ZERO);
 }
 
 TEST(DIVIDE, positives){
