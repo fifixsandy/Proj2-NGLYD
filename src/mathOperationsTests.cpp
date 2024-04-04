@@ -319,29 +319,63 @@ TEST(FACTORIAL, invalid){
 }
 
 TEST(MODULO, validNumbers){
-    EXPECT_EQ(m.modulo(7,3) , 1);
-    EXPECT_EQ(m.modulo(10,5) , 0);
-    EXPECT_EQ(m.modulo(15,4) , 3);
-    EXPECT_EQ(m.modulo(20,7) , 6);
-    EXPECT_EQ(m.modulo(25,6) , 1);
-    EXPECT_EQ(m.modulo(30,8) , 6);
-    EXPECT_EQ(m.modulo(35,9) , 8);
-    EXPECT_EQ(m.modulo(40,11) , 7);
-    EXPECT_EQ(m.modulo(45,12) , 9);
-    EXPECT_EQ(m.modulo(50,13) , 11);
+    MathErrorCode ERR = SUCCESS;
+    EXPECT_EQ(m.modulo(7,3,ERR) , 1);
+    EXPECT_EQ(ERR, SUCCESS);
+    EXPECT_EQ(m.modulo(10,5,ERR) , 0);
+    EXPECT_EQ(ERR, SUCCESS);
+    EXPECT_EQ(m.modulo(15,4,ERR) , 3);
+    EXPECT_EQ(ERR, SUCCESS);
+    EXPECT_EQ(m.modulo(20,7,ERR) , 6);
+    EXPECT_EQ(ERR, SUCCESS);
+    EXPECT_EQ(m.modulo(25,6,ERR) , 1);
+    EXPECT_EQ(ERR, SUCCESS);
+    EXPECT_EQ(m.modulo(30,8,ERR) , 6);
+    EXPECT_EQ(ERR, SUCCESS);
+    EXPECT_EQ(m.modulo(35,9,ERR) , 8);
+    EXPECT_EQ(ERR, SUCCESS);
+    EXPECT_EQ(m.modulo(40,11,ERR) , 7);
+    EXPECT_EQ(ERR, SUCCESS);
+    EXPECT_EQ(m.modulo(45,12,ERR) , 9);
+    EXPECT_EQ(ERR, SUCCESS);
+    EXPECT_EQ(m.modulo(50,13,ERR) , 11);
+    EXPECT_EQ(ERR, SUCCESS);
 }
 
 TEST(MODULO, zeroDivident){
-    EXPECT_EQ(m.modulo(0,13) , 0);
-    EXPECT_EQ(m.modulo(0,6) , 0);
-    EXPECT_EQ(m.modulo(0,8) , 0);
-    EXPECT_EQ(m.modulo(0,9) , 0);
-    EXPECT_EQ(m.modulo(0,11) , 0);  
+    MathErrorCode ERR = SUCCESS;
+    EXPECT_EQ(m.modulo(0,13,ERR) , 0);
+    EXPECT_EQ(ERR, SUCCESS);
+    EXPECT_EQ(m.modulo(0,6,ERR) , 0);
+    EXPECT_EQ(ERR, SUCCESS);
+    EXPECT_EQ(m.modulo(0,8,ERR) , 0);
+    EXPECT_EQ(ERR, SUCCESS);
+    EXPECT_EQ(m.modulo(0,9,ERR) , 0);
+    EXPECT_EQ(ERR, SUCCESS);
+    EXPECT_EQ(m.modulo(0,11,ERR) , 0);
+    EXPECT_EQ(ERR, SUCCESS);  
 }
 
-/* TODO - ERROR CHECKING*/
 TEST(MODULO, zeroDivisor){
+    MathErrorCode ERR = SUCCESS;
+    EXPECT_EQ(m.modulo(0,0,ERR) , 0);
+    EXPECT_EQ(ERR, DIVISION_BY_ZERO);
+    ERR = SUCCESS;
 
+    EXPECT_EQ(m.modulo(5,0,ERR) , 0);
+    EXPECT_EQ(ERR, DIVISION_BY_ZERO);
+    ERR = SUCCESS;
+
+    EXPECT_EQ(m.modulo(12,0,ERR) , 0);
+    EXPECT_EQ(ERR, DIVISION_BY_ZERO);
+    ERR = SUCCESS;
+
+    EXPECT_EQ(m.modulo(89,0,ERR) , 0);
+    EXPECT_EQ(ERR, DIVISION_BY_ZERO);
+    ERR = SUCCESS;
+
+    EXPECT_EQ(m.modulo(413,0,ERR) , 0);
+    EXPECT_EQ(ERR, DIVISION_BY_ZERO);
 }
 
 /* TODO - ERROR CHECKING*/
