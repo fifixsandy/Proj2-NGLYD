@@ -65,10 +65,8 @@ TEST(SUBTRACT, negative){
     EXPECT_EQ(m.subtract(158.356, -126.1894) , 284.5454);
 }
 
-
-/*  TODO - ADD ERROR CHECKING */
 TEST(DIVIDE, byZero){
-    MathErrorCode ERR;
+    MathErrorCode ERR = SUCCESS;
     m.divide(0, 0, ERR);
     EXPECT_EQ(ERR , DIVISION_BY_ZERO);
     ERR=SUCCESS;
@@ -80,15 +78,18 @@ TEST(DIVIDE, byZero){
 }
 
 TEST(DIVIDE, positives){
+    MathErrorCode ERR = SUCCESS;
+    EXPECT_EQ(m.divide(2,1,ERR) , 2);
+    ASSERT_EQ(ERR , SUCCESS);
 
-    EXPECT_EQ(m.divide(2,1) , 2);
+    EXPECT_EQ(m.divide(1,2,ERR) , 0.5);
+    ASSERT_EQ(ERR , SUCCESS);
 
-    EXPECT_EQ(m.divide(1,2) , 0.5);
+    EXPECT_EQ(m.divide(1,3,ERR) , 0.3333333333);
+    ASSERT_EQ(ERR , SUCCESS);
 
-    EXPECT_EQ(m.divide(1,3) , 0.3333333333);
-
-    EXPECT_EQ(m.divide(1.2,10) , 0.12);
-
+    EXPECT_EQ(m.divide(1.2,10,ERR) , 0.12);
+    ASSERT_EQ(ERR , SUCCESS);
 }
 
 TEST(MULTIPLY, zero){
@@ -118,19 +119,39 @@ TEST(MULTIPLY, twoNegative){
 }
 
 TEST(SQUARE_ROOT, zero){
-    EXPECT_EQ(m.SQUARE_ROOT(0) , 0);
+    MathErrorCode ERR = SUCCESS;
+    EXPECT_EQ(m.squareRoot(0, ERR) , 0);
+    EXPECT_EQ(ERR, SUCCESS);
 }
 
 TEST(SQUARE_ROOT, positive){
-    EXPECT_EQ(m.SQUARE_ROOT(4) , 2);
-    EXPECT_EQ(m.SQUARE_ROOT(9) , 3);
-    EXPECT_EQ(m.SQUARE_ROOT(9801) , 99);
-    EXPECT_EQ(m.SQUARE_ROOT(17991.929956) , 134.134);
+    MathErrorCode ERR = SUCCESS;
+    EXPECT_EQ(m.squareRoot(4, ERR) , 2);
+    EXPECT_EQ(ERR, SUCCESS);
+
+    EXPECT_EQ(m.squareRoot(9, ERR) , 3);
+    EXPECT_EQ(ERR, SUCCESS);
+
+    EXPECT_EQ(m.squareRoot(9801, ERR) , 99);
+    EXPECT_EQ(ERR, SUCCESS);
+
+    EXPECT_EQ(m.squareRoot(17991.929956, ERR) , 134.134);
+    EXPECT_EQ(ERR, SUCCESS);
 }
 
-/* TODO - ERROR CHECKING */
 TEST(SQUARE_ROOT, negative){
+    MathErrorCode ERR = SUCCESS;
+    EXPECT_EQ(m.squareRoot(-2, ERR) , 0);
+    EXPECT_EQ(ERR, NEGATIVE_ROOT_INPUT);
 
+    EXPECT_EQ(m.squareRoot(-254454, ERR) , 0);
+    EXPECT_EQ(ERR, NEGATIVE_ROOT_INPUT); 
+
+    EXPECT_EQ(m.squareRoot(-0.485454, ERR) , 0);
+    EXPECT_EQ(ERR, NEGATIVE_ROOT_INPUT);
+
+    EXPECT_EQ(m.squareRoot(-58.54545444, ERR) , 0);
+    EXPECT_EQ(ERR, NEGATIVE_ROOT_INPUT);
 }
 
 /* TODO - ERROR CHECKING */
