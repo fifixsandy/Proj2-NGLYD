@@ -308,7 +308,7 @@ TEST(FACTORIAL, invalid){
     ERR = SUCCESS;
 }
 
-TEST(MODULO, validNumbers){
+TEST(MODULO, naturalNumbers){
     MathErrorCode ERR = SUCCESS;
     EXPECT_EQ(m.modulo(7,3,ERR) , 1);
     EXPECT_EQ(ERR, SUCCESS);
@@ -329,6 +329,70 @@ TEST(MODULO, validNumbers){
     EXPECT_EQ(m.modulo(45,12,ERR) , 9);
     EXPECT_EQ(ERR, SUCCESS);
     EXPECT_EQ(m.modulo(50,13,ERR) , 11);
+    EXPECT_EQ(ERR, SUCCESS);
+}
+
+TEST(MODULO, negativeNumbers){
+    MathErrorCode ERR = SUCCESS;
+    EXPECT_EQ(m.modulo(-30, 7, ERR), -2);
+    EXPECT_EQ(ERR, SUCCESS);
+    ERR = SUCCESS;
+
+    EXPECT_EQ(m.modulo(25, -8, ERR), 1);
+    EXPECT_EQ(ERR, SUCCESS);
+    ERR = SUCCESS;
+    
+    EXPECT_EQ(m.modulo(-48, -5, ERR), -3);
+    EXPECT_EQ(ERR, SUCCESS);
+    ERR = SUCCESS;
+    
+    EXPECT_EQ(m.modulo(37, 9, ERR), 1);
+    EXPECT_EQ(ERR, SUCCESS);
+    ERR = SUCCESS;
+    
+    EXPECT_EQ(m.modulo(-20, 6, ERR), -2);
+    EXPECT_EQ(ERR, SUCCESS);
+    ERR = SUCCESS;
+    
+    EXPECT_EQ(m.modulo(18, -4, ERR), 2);
+    EXPECT_EQ(ERR, SUCCESS);
+    ERR = SUCCESS;
+    
+    EXPECT_EQ(m.modulo(-15, -3, ERR), 0);
+    EXPECT_EQ(ERR, SUCCESS);
+}
+
+TEST(MODULO, nonInt){
+    MathErrorCode ERR = SUCCESS;
+    EXPECT_NEAR(m.modulo(5.5, 2.5, ERR), 0.5, 1e-3);
+    EXPECT_EQ(ERR, SUCCESS);
+    ERR = SUCCESS;
+    
+    EXPECT_NEAR(m.modulo(7.8, 3.2, ERR), 1.4, 1e-3);
+    EXPECT_EQ(ERR, SUCCESS);
+    ERR = SUCCESS;
+    
+    EXPECT_NEAR(m.modulo(6.2, -4.3, ERR), 1.9, 1e-3);
+    EXPECT_EQ(ERR, SUCCESS);
+    ERR = SUCCESS;
+    
+    EXPECT_NEAR(m.modulo(-9.7, 5.1, ERR), -4.6, 1e-3);
+    EXPECT_EQ(ERR, SUCCESS);
+    ERR = SUCCESS;
+    
+    EXPECT_NEAR(m.modulo(-8.4, -6.5, ERR), -1.9, 1e-3);
+    EXPECT_EQ(ERR, SUCCESS);
+    ERR = SUCCESS;
+    
+    EXPECT_NEAR(m.modulo(3.3, 1.1, ERR), 1.1, 1e-3);
+    EXPECT_EQ(ERR, SUCCESS);
+    ERR = SUCCESS;
+    
+    EXPECT_NEAR(m.modulo(-2.5, 1.5, ERR), -1.0, 1e-3);
+    EXPECT_EQ(ERR, SUCCESS);
+    ERR = SUCCESS;
+    
+    EXPECT_NEAR(m.modulo(9.2, -2.3, ERR), 0, 1e-3);
     EXPECT_EQ(ERR, SUCCESS);
 }
 
@@ -367,5 +431,7 @@ TEST(MODULO, zeroDivisor){
     EXPECT_EQ(m.modulo(413,0,ERR) , 0);
     EXPECT_EQ(ERR, DIVISION_BY_ZERO);
 }
+
+
 
 
