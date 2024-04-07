@@ -154,26 +154,6 @@ TEST(SQUARE_ROOT, negative){
     EXPECT_EQ(ERR, NEGATIVE_ROOT_INPUT);
 }
 
-/* 
-    @todo Replace non equal with better ERROR code. 
-*/
-TEST(NTH_ROOT, notNaturalRoot){
-    MathErrorCode ERR = SUCCESS;
-    EXPECT_EQ(m.nthRoot(156, 0.8, ERR) , 0);
-    EXPECT_NE(ERR, SUCCESS);
-    ERR = SUCCESS;
-
-    EXPECT_EQ(m.nthRoot(0, 0.544, ERR) , 0);
-    EXPECT_NE(ERR, SUCCESS);
-    ERR = SUCCESS;
-
-    EXPECT_EQ(m.nthRoot(-15.5, -45.5, ERR) , 0);
-    EXPECT_NE(ERR, SUCCESS);
-    ERR = SUCCESS;
-
-    EXPECT_EQ(m.nthRoot(-55, -561, ERR) , 0);
-    EXPECT_NE(ERR, SUCCESS);   
-}
 
 TEST(NTH_ROOT, zero){
     MathErrorCode ERR = SUCCESS;
@@ -227,6 +207,24 @@ TEST(NTH_ROOT, odd){
     EXPECT_EQ(ERR, SUCCESS);
 }
 
+TEST(NTH_ROOT, invalidIndex){
+    MathErrorCode ERR = SUCCESS;
+    EXPECT_EQ(m.nthRoot(56,-5,ERR), 0);
+    EXPECT_EQ(ERR, INVALID_ROOT_INDEX);
+    ERR = SUCCESS;
+
+    EXPECT_EQ(m.nthRoot(556.23,0,ERR), 0);
+    EXPECT_EQ(ERR, INVALID_ROOT_INDEX);
+    ERR = SUCCESS;
+
+    EXPECT_EQ(m.nthRoot(-56.1111,-6569,ERR), 0);
+    EXPECT_EQ(ERR, INVALID_ROOT_INDEX);
+    ERR = SUCCESS;
+
+    EXPECT_EQ(m.nthRoot(0.26656,0,ERR), 0);
+    EXPECT_EQ(ERR, INVALID_ROOT_INDEX);
+}
+
 TEST(NTH_POWER, zeroAndOne){
     EXPECT_EQ(m.nthPower(0, 2) , 0);
     EXPECT_EQ(m.nthPower(0, 3) , 0);
@@ -268,10 +266,6 @@ TEST(NTH_POWER, odd){
     EXPECT_NEAR(m.nthPower(-0.1, 9) , -1e-09, 1e-12);
 }
 
-/* TODO */
-TEST(NTH_POWER, invalidExponent){
-
-}
 
 TEST(FACTORIAL, zero){
     MathErrorCode ERR = SUCCESS;
@@ -295,7 +289,6 @@ TEST(FACTORIAL, valid){
     EXPECT_EQ(ERR, SUCCESS);
 }
 
-/* TODO - ERROR CHECKING */
 TEST(FACTORIAL, invalid){
     MathErrorCode ERR = SUCCESS;
     EXPECT_EQ(m.factorial(-1,ERR), 0);
@@ -375,8 +368,4 @@ TEST(MODULO, zeroDivisor){
     EXPECT_EQ(ERR, DIVISION_BY_ZERO);
 }
 
-/* TODO - ERROR CHECKING*/
-TEST(MODULO, invalidNumbers){
-
-}
 
