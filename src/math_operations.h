@@ -29,6 +29,7 @@ enum MathErrorCode {
     DIVISION_BY_ZERO, ///< Division by zero occured while calculating.
     NEGATIVE_ROOT_INPUT, ///< Negative number was provided as an input for calculating root.
     NEGATIVE_FACTORIAL_INPUT, ///< Negative number was provided as an input for calculating factorial.
+    INVALID_ROOT_INDEX
 };
 
 class MathOps {
@@ -105,13 +106,13 @@ public:
     double nthRoot(double a, int n, MathErrorCode &errCode);
 
     /**
-    * @brief Calculates the remainder by dividing two ints.  
+    * @brief Calculates the remainder by dividing two doubles.  
     * 
-    * @param a The first int operand (dividend).
-    * @param b The second int operand (divisor).
-    * @return The remainder of a divided by b as an int.
+    * @param a The first double operand (dividend).
+    * @param b The second double operand (divisor).
+    * @return The remainder of a divided by b as a double.
     */ 
-    int modulo(int a, int b, MathErrorCode &errCode);
+    double modulo(double a, double b, MathErrorCode &errCode);
     
 private:
 

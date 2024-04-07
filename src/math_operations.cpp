@@ -51,13 +51,20 @@ double MathOps::nthRoot(double a, int n, MathErrorCode &errCode) {
         errCode = NEGATIVE_ROOT_INPUT;
         return 0;
     }
+    if (n <= 0) {
+        errCode = INVALID_ROOT_INDEX;
+        return 0;
+    }
+    if (a < 0) {
+        return -pow(-a, 1.0 / n);
+    }
     return pow(a, 1.0 / n);
 }
 
-int MathOps::modulo(int a, int b, MathErrorCode &errCode) {
-    if (b == 0) {
+double MathOps::modulo(double a, double b, MathErrorCode &errCode) {
+    if (b == 0.0) {
         errCode = DIVISION_BY_ZERO;
         return 0;
     }
-    return a % b;
+    return fmod(a, b);
 }
