@@ -51,6 +51,15 @@ float calcMean(std::vector<double> vector, double count, MathErrorCode *flag){
 	}
 }
 
+/** 
+ * @brief Calculates the standard deviation from the numbers
+ * 
+ * @param vector Vector of the input numbers
+ * @param count  Count of the numbers
+ * @param flag	 Flag if an error occurs
+ * @return		 Standard deviation from the numbers or error code
+ * 
+*/
 float calcStdev(std::vector<double> vector, double count, MathErrorCode *flag){
 	MathErrorCode ERR;
 
