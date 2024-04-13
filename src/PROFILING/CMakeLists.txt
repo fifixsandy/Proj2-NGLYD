@@ -1,2 +1,2 @@
-add_executable(stdev stdev.cpp)
+add_executable(profile stdev.cpp)
 target_link_libraries(stdev PRIVATE LIBS)
