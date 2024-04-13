@@ -1,2 +1,2 @@
-add_executable(profiling profiling.cpp)
-target_link_libraries(profiling PRIVATE LIBS)
+add_executable(stdev stdev.cpp)
+target_link_libraries(stdev PRIVATE LIBS)
