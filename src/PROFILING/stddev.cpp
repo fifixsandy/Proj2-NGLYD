@@ -60,7 +60,7 @@ float calcMean(std::vector<double> vector, double count, MathErrorCode *flag){
  * 
 */
 float calcStdev(std::vector<double> vector, double count, MathErrorCode *flag){
-	MathErrorCode ERR;
+	MathErrorCode ERR = SUCCESS;
 
 	float mean = calcMean(vector, count, flag);
 	if(ERR != SUCCESS){
