@@ -16,15 +16,9 @@ FetchContent_MakeAvailable(googletest)
 
 enable_testing()
 
-add_executable(
-  mathTest
-  mathOperationsTests.cpp
-  math_operations.cpp
-)
-target_link_libraries(
-  mathTest
-  GTest::gtest_main
-)
+add_subdirectory(TESTS)
+add_subdirectory(PROFILING)
+add_subdirectory(LIBS)
 
-include(GoogleTest)
-gtest_discover_tests(mathTest)
+
+
