@@ -18,18 +18,20 @@
 #include <string>
 #include <vector>
 
+
 MathOps m;
 
 /**
-* @brief Calculates mean of given numbers
+* @brief 		Calculates mean of given numbers
 * 
 * @param vector Vector of floats to calculate mean from
 * @param count	Count of the numbers
-* @return		Mean of the numbers
+* @param flag	Flag if an error occurs
+* @return		Mean of the numbers or error code
 */
-float mean(std::vector<double> vector, double count, MathErrorCode *flag){
+float calcMean(std::vector<double> vector, double count, MathErrorCode *flag){
 
-	float sum = 0.0; // sum of all the numbers
+	float sum = 0.0;
 
 	for(float num : vector)
 	{
@@ -49,6 +51,29 @@ float mean(std::vector<double> vector, double count, MathErrorCode *flag){
 	}
 }
 
+float calcStdev(std::vector<double> vector, double count, MathErrorCode *flag){
+	MathErrorCode ERR;
+
+	float mean = calcMean(vector, count, flag);
+
+	float sum = 0.0;
+	float meanSqN = 0.0;
+	float tempNum = 0.0; 
+
+	meanSqN = m.nthPower(mean, 2); // mean^2
+	meanSqN = m.multiply(count, meanSqN); // (mean^2)*count
+
+	for(float num : vector){
+		tempNum = m.nthPower(num, 2);
+		sum = m.add(sum, tempNum);
+	}
+
+	sum = m.subtract(sum, meanSqN);
+	sum = m.divide(sum, count-1, ERR);
+	sum = m.squareRoot(sum, ERR);
+
+	return sum;
+}
 int main() {
 	std::vector<double> numbers;
 
@@ -61,14 +86,16 @@ int main() {
 		count++;
 	}
 
-	float meanN = mean(numbers, count, &eFlag);
+	float mean = calcMean(numbers, count, &eFlag);
+
+	float stdev = calcStdev(numbers, count, &eFlag);
 
 	if(eFlag != SUCCESS){
-		std::cerr << eFlag << std::endl;
+		
 		return eFlag;
 	}
 	else{
-		std::cout << meanN <<std::endl;
+		std::cout << stdev <<std::endl;
 	}
 	return 0;
 }
