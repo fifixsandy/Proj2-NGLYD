@@ -27,7 +27,7 @@ MathOps m;
 * @param count	Count of the numbers
 * @return		Mean of the numbers
 */
-float mean(std::vector<double> vector, double count){
+float mean(std::vector<double> vector, double count, MathErrorCode *flag){
 
 	float sum = 0.0; // sum of all the numbers
 
@@ -41,6 +41,7 @@ float mean(std::vector<double> vector, double count){
 	float mean = m.divide(sum, count, ERR);
 	
 	if(ERR != SUCCESS){
+		*flag = ERR;
 		return ERR;
 	}
 	else{
@@ -53,16 +54,22 @@ int main() {
 
 	double num;
 	double count;
+	MathErrorCode eFlag;
 
 	while(std::cin >> num){
 		numbers.push_back(num);
 		count++;
 	}
 
-	float meanN = mean(numbers, count);
+	float meanN = mean(numbers, count, &eFlag);
 
-	std::cout << meanN <<std::endl;
-
+	if(eFlag != SUCCESS){
+		std::cerr << eFlag << std::endl;
+		return eFlag;
+	}
+	else{
+		std::cout << meanN <<std::endl;
+	}
 	return 0;
 }
 
