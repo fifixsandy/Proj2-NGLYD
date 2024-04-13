@@ -5,7 +5,6 @@
  *
  * This file calculates a standard deviation from numbers given through stdin.
  * It is made for profiling purposes and uses math_operations.h library.
- * It takes at most XXX numbers of XXX size.
  * 
  * @author xfignam00
  * @author xmalegt00
@@ -92,12 +91,11 @@ int main() {
 	MathErrorCode eFlag;
 
 	while(std::cin >> num){
-		numbers.push_back(num);
+		numbers.push_back(num); 
 		count++;
-	}
+	} // adds each number to vector
 
 	float mean = calcMean(numbers, count, &eFlag);
-
 	float stdev = calcStdev(numbers, count, &eFlag);
 
 	if(eFlag != SUCCESS){
