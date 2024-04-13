@@ -62,7 +62,7 @@ float calcMean(std::vector<double> vector, double count, MathErrorCode *flag){
 float calcStdev(std::vector<double> vector, double count, MathErrorCode *flag){
 	MathErrorCode ERR = SUCCESS;
 
-	float mean = calcMean(vector, count, flag);
+	float mean = calcMean(vector, count, &ERR);
 	if(ERR != SUCCESS){
 		*flag = ERR;
 		return ERR;
@@ -82,17 +82,24 @@ float calcStdev(std::vector<double> vector, double count, MathErrorCode *flag){
 
 	sum = m.subtract(sum, meanSqN);
 	sum = m.divide(sum, count-1, ERR);
+	if(ERR != SUCCESS){
+		*flag = ERR;
+		return ERR;
+	}
 	sum = m.squareRoot(sum, ERR);
-
+	if(ERR != SUCCESS){
+		*flag = ERR;
+		return ERR;
+	}
 	return sum;
 }
 
 int main() {
 	std::vector<double> numbers;
 
-	double num;
-	double count;
-	MathErrorCode eFlag;
+	double num = 0;
+	double count = 0;
+	MathErrorCode eFlag = SUCCESS;
 
 	while(std::cin >> num){
 		numbers.push_back(num); 
