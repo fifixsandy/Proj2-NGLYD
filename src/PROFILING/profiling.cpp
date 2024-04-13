@@ -91,7 +91,7 @@ int main() {
 	float stdev = calcStdev(numbers, count, &eFlag);
 
 	if(eFlag != SUCCESS){
-		
+		std::cerr << "ERROR NUMBER: " << eFlag << std::endl << "CHECK THE VALIDITY OF YOUR INPUT" << std::endl;
 		return eFlag;
 	}
 	else{
