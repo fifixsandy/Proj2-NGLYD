@@ -8,13 +8,9 @@ MainWindow::MainWindow(QWidget *parent)
 {
     ui->setupUi(this);
 
-    bool SucConnest = connect(ui->Button2, &QPushButton::clicked ,this,&MainWindow::TestButtonPrint);
-    #ifdef DEBUG
-    qInfo() << "Conection Button2 to Slot:" << SucConnest;
-    #endif
-
     AddShadowToButtons();
     ConfDisplay();
+    InitButtons();
 }
 
 MainWindow::~MainWindow()
@@ -26,14 +22,6 @@ void MainWindow::ConfDisplay(){
     QRegularExpression rx("[0-9]+[.]{0,1}[0-9]*");
     QValidator *validator = new QRegularExpressionValidator(rx, this);
     ui->Display->setValidator(validator);
-}
-
-void MainWindow::TestButtonPrint()
-{
-    ui->Display->setText("12345");
-    #ifdef DEBUG
-         qInfo() << "TestPrint";
-    #endif
 }
 
 void MainWindow::AddShadowToButtons(){
@@ -53,5 +41,24 @@ QGraphicsDropShadowEffect* MainWindow::CreateShadow(){
     return DropShadowEffect;
 }
 
+int MainWindow::InitButtons(){
 
+    QPushButton *NumButtons[10];
+    for(int i = 0; i < 10; ++i){
+        QString ButName = "Button" + QString::number(i);
 
+        NumButtons[i] = MainWindow::findChild<QPushButton *>(ButName);
+
+        connect(NumButtons[i], SIGNAL(released()), this,
+                SLOT(NumPressed()));
+    }
+    return 1;
+}
+
+void MainWindow::NumPressed(){
+    QPushButton *Button = (QPushButton *)sender();
+
+    QString ButtonVal = Button->text();
+
+    ui->Display->insert(ButtonVal);
+}

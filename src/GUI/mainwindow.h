@@ -27,11 +27,12 @@ public:
     ~MainWindow();
 
 private slots:
-    void TestButtonPrint();
+    void NumPressed();
 
 private:
     QGraphicsDropShadowEffect* CreateShadow();
     Ui::MainWindow *ui;
+    int InitButtons();
     void AddShadowToButtons();
     void ConfDisplay();
 };
