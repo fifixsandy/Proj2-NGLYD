@@ -63,6 +63,10 @@ float calcStdev(std::vector<double> vector, double count, MathErrorCode *flag){
 	MathErrorCode ERR;
 
 	float mean = calcMean(vector, count, flag);
+	if(ERR != SUCCESS){
+		*flag = ERR;
+		return ERR;
+	}
 
 	float sum = 0.0;
 	float meanSqN = 0.0;
@@ -95,7 +99,6 @@ int main() {
 		count++;
 	} // adds each number to vector
 
-	float mean = calcMean(numbers, count, &eFlag);
 	float stdev = calcStdev(numbers, count, &eFlag);
 
 	if(eFlag != SUCCESS){
