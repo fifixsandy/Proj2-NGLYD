@@ -1,7 +1,7 @@
 /**
  * @file stddev.cpp
  * 
- * @brief Source code for calculating standard deviation
+ * @brief Source code for calculating standard deviation from given numbers
  *
  * This file calculates a standard deviation from numbers given through stdin.
  * It is made for profiling purposes and uses math_operations.h library.
