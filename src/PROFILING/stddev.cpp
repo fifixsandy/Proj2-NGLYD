@@ -1,5 +1,5 @@
 /**
- * @file stdev.cpp
+ * @file stddev.cpp
  * 
  * @brief Source code for calculating standard deviation
  *
@@ -110,5 +110,5 @@ int main() {
 	}
 	return 0;
 }
-/*** End of file stdev.cpp ***/
+/*** End of file stddev.cpp ***/
 
