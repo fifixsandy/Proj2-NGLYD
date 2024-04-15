@@ -14,7 +14,7 @@
  * @author xskovaj00
  */
 
-#include "math_operations.h"
+#include "../LIBS/math_operations.h"
 #include "gtest/gtest.h"
 
 MathOps m;
