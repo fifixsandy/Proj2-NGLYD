@@ -1,6 +1,20 @@
+/**
+ * @file math_operations.cpp
+ * 
+ * @brief Implementation of the MathOps class for basic mathematical operations.
+ * 
+ * This file implements the MathOps class defined in math_operations.h.
+ * It includes functions for basic arithmetic operations, Nth root,
+ * exponentiation, factorial calculation and modulo.
+ * 
+ * @author xfignam00
+ * @author xmalegt00
+ * @author xnovakf00
+ * @author xskovaj00
+*/
+
 #include "math_operations.h"
 #include <cmath> 
-
 
 double MathOps::add(double a, double b) {
     return a + b;
