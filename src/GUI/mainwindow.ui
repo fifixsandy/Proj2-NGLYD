@@ -96,7 +96,7 @@ color: rgb(0, 0, 0);</string>
        <set>Qt::ImhPreferNumbers</set>
       </property>
       <property name="maxLength">
-       <number>10</number>
+       <number>15</number>
       </property>
       <property name="alignment">
        <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
@@ -139,6 +139,9 @@ color: rgb(0, 0, 0);</string>
             <pointsize>15</pointsize>
            </font>
           </property>
+          <property name="cursor">
+           <cursorShape>PointingHandCursor</cursorShape>
+          </property>
           <property name="focusPolicy">
            <enum>Qt::NoFocus</enum>
           </property>
@@ -171,6 +174,9 @@ color: rgb(0, 0, 0);</string>
             <pointsize>20</pointsize>
            </font>
           </property>
+          <property name="cursor">
+           <cursorShape>PointingHandCursor</cursorShape>
+          </property>
           <property name="focusPolicy">
            <enum>Qt::NoFocus</enum>
           </property>
@@ -196,7 +202,7 @@ color: rgb(0, 0, 0);</string>
          </widget>
         </item>
         <item>
-         <widget class="QPushButton" name="Button1_2">
+         <widget class="QPushButton" name="ButtonSub">
           <property name="minimumSize">
            <size>
             <width>60</width>
@@ -241,6 +247,9 @@ color: rgb(0, 0, 0);</string>
             <pointsize>20</pointsize>
            </font>
           </property>
+          <property name="cursor">
+           <cursorShape>PointingHandCursor</cursorShape>
+          </property>
           <property name="focusPolicy">
            <enum>Qt::NoFocus</enum>
           </property>
@@ -280,6 +289,9 @@ color: rgb(0, 0, 0);</string>
             <pointsize>16</pointsize>
            </font>
           </property>
+          <property name="cursor">
+           <cursorShape>PointingHandCursor</cursorShape>
+          </property>
           <property name="focusPolicy">
            <enum>Qt::NoFocus</enum>
           </property>
@@ -312,6 +324,9 @@ color: rgb(0, 0, 0);</string>
             <pointsize>20</pointsize>
            </font>
           </property>
+          <property name="cursor">
+           <cursorShape>PointingHandCursor</cursorShape>
+          </property>
           <property name="focusPolicy">
            <enum>Qt::NoFocus</enum>
           </property>
@@ -343,6 +358,9 @@ color: rgb(0, 0, 0);</string>
             <family>Noto Sans</family>
             <pointsize>20</pointsize>
            </font>
+          </property>
+          <property name="cursor">
+           <cursorShape>PointingHandCursor</cursorShape>
           </property>
           <property name="focusPolicy">
            <enum>Qt::NoFocus</enum>
@@ -379,6 +397,9 @@ color: rgb(0, 0, 0);</string>
             <family>Noto Sans</family>
             <pointsize>20</pointsize>
            </font>
+          </property>
+          <property name="cursor">
+           <cursorShape>PointingHandCursor</cursorShape>
           </property>
           <property name="focusPolicy">
            <enum>Qt::NoFocus</enum>
@@ -423,6 +444,9 @@ color: rgb(0, 0, 0);</string>
             <pointsize>20</pointsize>
            </font>
           </property>
+          <property name="cursor">
+           <cursorShape>PointingHandCursor</cursorShape>
+          </property>
           <property name="focusPolicy">
            <enum>Qt::NoFocus</enum>
           </property>
@@ -460,12 +484,15 @@ color: rgb(0, 0, 0);</string>
          </widget>
         </item>
         <item>
-         <widget class="QPushButton" name="ButtonSqaureRoot">
+         <widget class="QPushButton" name="ButtonSquareRoot">
           <property name="font">
            <font>
             <family>Noto Sans</family>
             <pointsize>20</pointsize>
            </font>
+          </property>
+          <property name="cursor">
+           <cursorShape>PointingHandCursor</cursorShape>
           </property>
           <property name="focusPolicy">
            <enum>Qt::NoFocus</enum>
@@ -511,6 +538,9 @@ color: rgb(0, 0, 0);</string>
             <pointsize>20</pointsize>
            </font>
           </property>
+          <property name="cursor">
+           <cursorShape>PointingHandCursor</cursorShape>
+          </property>
           <property name="focusPolicy">
            <enum>Qt::NoFocus</enum>
           </property>
@@ -546,6 +576,9 @@ color: rgb(0, 0, 0);</string>
             <family>Noto Sans</family>
             <pointsize>20</pointsize>
            </font>
+          </property>
+          <property name="cursor">
+           <cursorShape>PointingHandCursor</cursorShape>
           </property>
           <property name="focusPolicy">
            <enum>Qt::NoFocus</enum>
@@ -590,6 +623,9 @@ color: rgb(0, 0, 0);</string>
             <pointsize>20</pointsize>
            </font>
           </property>
+          <property name="cursor">
+           <cursorShape>PointingHandCursor</cursorShape>
+          </property>
           <property name="focusPolicy">
            <enum>Qt::NoFocus</enum>
           </property>
@@ -633,6 +669,9 @@ color: rgb(0, 0, 0);</string>
             <pointsize>15</pointsize>
            </font>
           </property>
+          <property name="cursor">
+           <cursorShape>PointingHandCursor</cursorShape>
+          </property>
           <property name="focusPolicy">
            <enum>Qt::NoFocus</enum>
           </property>
@@ -664,6 +703,9 @@ color: rgb(0, 0, 0);</string>
             <family>Noto Sans</family>
             <pointsize>20</pointsize>
            </font>
+          </property>
+          <property name="cursor">
+           <cursorShape>PointingHandCursor</cursorShape>
           </property>
           <property name="focusPolicy">
            <enum>Qt::NoFocus</enum>
@@ -700,6 +742,9 @@ color: rgb(0, 0, 0);</string>
             <family>Noto Sans</family>
             <pointsize>20</pointsize>
            </font>
+          </property>
+          <property name="cursor">
+           <cursorShape>PointingHandCursor</cursorShape>
           </property>
           <property name="focusPolicy">
            <enum>Qt::NoFocus</enum>
@@ -801,6 +846,9 @@ color: rgb(0, 0, 0);</string>
               <pointsize>20</pointsize>
              </font>
             </property>
+            <property name="cursor">
+             <cursorShape>PointingHandCursor</cursorShape>
+            </property>
             <property name="focusPolicy">
              <enum>Qt::NoFocus</enum>
             </property>
@@ -837,6 +885,9 @@ color: rgb(0, 0, 0);</string>
               <pointsize>20</pointsize>
              </font>
             </property>
+            <property name="cursor">
+             <cursorShape>PointingHandCursor</cursorShape>
+            </property>
             <property name="focusPolicy">
              <enum>Qt::NoFocus</enum>
             </property>
@@ -872,6 +923,9 @@ color: rgb(0, 0, 0);</string>
               <family>Noto Sans</family>
               <pointsize>20</pointsize>
              </font>
+            </property>
+            <property name="cursor">
+             <cursorShape>PointingHandCursor</cursorShape>
             </property>
             <property name="focusPolicy">
              <enum>Qt::NoFocus</enum>
@@ -915,6 +969,9 @@ color: rgb(0, 0, 0);</string>
               <family>Noto Sans</family>
               <pointsize>20</pointsize>
              </font>
+            </property>
+            <property name="cursor">
+             <cursorShape>PointingHandCursor</cursorShape>
             </property>
             <property name="focusPolicy">
              <enum>Qt::NoFocus</enum>

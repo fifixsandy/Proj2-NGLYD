@@ -4,10 +4,15 @@
 #include <QMainWindow>
 #include <QGraphicsDropShadowEffect>
 #include <QRegularExpressionValidator>
-
+#include <QPushButton>
+#include "../LIBS/math_operations.h"
 
 
 #define DEBUG
+
+#define DISPLAY_FONT_SIZE 40
+#define DISPLAY_START_LEN 10
+#define DISPLAY_MAX_LEN 15
 
 
 
@@ -22,18 +27,35 @@ class MainWindow : public QMainWindow
     Q_OBJECT
 
 public:
+    static const QString MatButtons[];
     MainWindow(QWidget *parent = nullptr);
 
     ~MainWindow();
 
 private slots:
     void NumPressed();
+    void CePressed();
+    void DotPressed();
+    void MatButPressed();
+    void OnTextChanged(const QString &text);
 
 private:
+
     QGraphicsDropShadowEffect* CreateShadow();
-    Ui::MainWindow *ui;
-    int InitButtons();
+    void BinOperations(QString ButtonName, double &AOperand, QString BOperand, bool &CovnersionCheck, MathErrorCode &MathErr);
+    void UnOperations(QString ButtonName, QString AOperand, double &Result, bool &CovnersionCheck, MathErrorCode &MathErr);
+    void SetNumberToDisplay(double Number);
+    void PrintError();
     void AddShadowToButtons();
     void ConfDisplay();
+    bool IsDouble(unsigned long long Var);
+    int InitButtons();
+
+    Ui::MainWindow *ui;
+    QPushButton *LastPressedButton;
+    MathOps Math;
+    double CalVarDouble;
+    bool Error;
+
 };
 #endif // MAINWINDOW_H
