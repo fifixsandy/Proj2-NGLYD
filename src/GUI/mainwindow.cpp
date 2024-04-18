@@ -31,7 +31,42 @@ MainWindow::MainWindow(QWidget *parent)
     LastPressedButton = nullptr;
 
     connect(ui->Display, &QLineEdit::textChanged, this, &MainWindow::OnTextChanged);
+    ui->Display->installEventFilter(this);
+    ui->Display->setFocus();
 }
+
+bool MainWindow::eventFilter(QObject *obj, QEvent *event)
+{
+    if (event->type() == QEvent::KeyPress) {
+        QKeyEvent *keyEvent = static_cast<QKeyEvent*>(event);
+        if (keyEvent->key() == Qt::Key_Enter || keyEvent->key() == Qt::Key_Return) {
+            ui->ButtonEqual->click();
+            event->accept();
+        }
+        else if(keyEvent->key() == Qt::Key_Asterisk){
+            ui->ButtonMul->click();
+            event->accept();
+        }
+        else if(keyEvent->key() == Qt::Key_Slash){
+            ui->ButtonDiv->click();
+            event->accept();
+        }
+        else if(keyEvent->key() == Qt::Key_Minus){
+            ui->ButtonSub->click();
+            event->accept();
+        }
+        else if(keyEvent->key() == Qt::Key_Plus){
+            ui->ButtonAdd->click();
+            event->accept();
+        }
+        else{
+            return QObject::eventFilter(obj, event);
+        }
+        return true;
+    }
+    return QObject::eventFilter(obj, event);
+}
+
 
 MainWindow::~MainWindow()
 {
@@ -75,7 +110,7 @@ int MainWindow::InitButtons(){
 
     QString ButName = "ButtonDot";
     connect(MainWindow::findChild<QPushButton *>(ButName), SIGNAL(released()), this,
-            SLOT(DotPressed()));
+            SLOT());
 
     ButName = "ButtonCe";
     connect(MainWindow::findChild<QPushButton *>(ButName), SIGNAL(released()), this,
@@ -91,6 +126,7 @@ int MainWindow::InitButtons(){
 
 void MainWindow::CePressed(){
     ui->Display->clear();
+    ui->Display2->clear();
     Error = false;
     LastPressedButton = nullptr;
     CalVarDouble = 0;
@@ -120,12 +156,13 @@ void MainWindow::MatButPressed(){
         }
         if(ButtonName == "ButtonFact" || ButtonName == "ButtonSquareRoot"){
             UnOperations(ButtonName, text, CalVarDouble, ConversionCheck, MathErr);
-            SetNumberToDisplay(CalVarDouble);
+            SetNumberToDisplay(CalVarDouble, ui->Display);
         }
         else{
 
             CalVarDouble = text.toDouble(&ConversionCheck);
             LastPressedButton = Button;
+            SetNumberToDisplay(CalVarDouble, ui->Display2);
             ui->Display->clear();
         }
     }
@@ -133,13 +170,17 @@ void MainWindow::MatButPressed(){
         BinOperations(LastPressedButton->objectName(), CalVarDouble, text,
                       ConversionCheck, MathErr);
 
-        SetNumberToDisplay(CalVarDouble);
+        SetNumberToDisplay(CalVarDouble, ui->Display);
         LastPressedButton = Button;
+        SetNumberToDisplay(CalVarDouble, ui->Display2);
         if(Button->objectName() != "ButtonEqual") ui->Display->clear();
     }
 
     if(!ConversionCheck || MathErr != SUCCESS) PrintError();
-    if(Button->objectName() == "ButtonEqual")LastPressedButton = nullptr;
+    if(Button->objectName() == "ButtonEqual"){
+        LastPressedButton = nullptr;
+        ui->Display2->clear();
+      }
 }
 
 void MainWindow::NumPressed(){
@@ -208,8 +249,8 @@ void MainWindow::OnTextChanged(const QString &text){
     }
 }
 
-void MainWindow::SetNumberToDisplay(double Number){
+void MainWindow::SetNumberToDisplay(double Number, QLineEdit *Display){
     int length = QString::number(Number).length();
-    if(length > 8) ui->Display->setText(QString::number(Number, 'e', 8));
-    else ui->Display->setText(QString::number(Number));
+    if(length > 8) Display->setText(QString::number(Number, 'e', 8));
+    else Display->setText(QString::number(Number));
 }

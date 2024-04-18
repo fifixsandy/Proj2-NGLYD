@@ -5,6 +5,8 @@
 #include <QGraphicsDropShadowEffect>
 #include <QRegularExpressionValidator>
 #include <QPushButton>
+#include <QLineEdit>
+#include <QKeyEvent>
 #include "../LIBS/math_operations.h"
 
 
@@ -39,12 +41,16 @@ private slots:
     void MatButPressed();
     void OnTextChanged(const QString &text);
 
+protected:
+    bool eventFilter(QObject *obj, QEvent *event) override;
+
 private:
 
     QGraphicsDropShadowEffect* CreateShadow();
+
     void BinOperations(QString ButtonName, double &AOperand, QString BOperand, bool &CovnersionCheck, MathErrorCode &MathErr);
     void UnOperations(QString ButtonName, QString AOperand, double &Result, bool &CovnersionCheck, MathErrorCode &MathErr);
-    void SetNumberToDisplay(double Number);
+    void SetNumberToDisplay(double Number, QLineEdit *Display);
     void PrintError();
     void AddShadowToButtons();
     void ConfDisplay();
