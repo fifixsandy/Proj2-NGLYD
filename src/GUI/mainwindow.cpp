@@ -1,5 +1,6 @@
 #include "mainwindow.h"
 #include "./ui_mainwindow.h"
+#include "helpwindow.h"
 
 
 const QString MainWindow::MatButtons[] = {
@@ -108,13 +109,13 @@ int MainWindow::InitButtons(){
                 SLOT(NumPressed()));
     }
 
-    QString ButName = "ButtonDot";
-    connect(MainWindow::findChild<QPushButton *>(ButName), SIGNAL(released()), this,
-            SLOT());
-
-    ButName = "ButtonCe";
+    QString ButName = "ButtonCe";
     connect(MainWindow::findChild<QPushButton *>(ButName), SIGNAL(released()), this,
             SLOT(CePressed()));
+
+    ButName = "ButtonHelp";
+    connect(MainWindow::findChild<QPushButton *>(ButName), SIGNAL(released()), this,
+            SLOT(HelpPressed()));
 
     for(auto i:MatButtons){
         connect(MainWindow::findChild<QPushButton *>(i), SIGNAL(released()), this,
@@ -122,6 +123,12 @@ int MainWindow::InitButtons(){
     }
 
     return 1;
+}
+
+void MainWindow::HelpPressed(){
+    HelpWindow help;
+    help.show();
+    help.exec();
 }
 
 void MainWindow::CePressed(){

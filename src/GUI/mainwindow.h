@@ -7,6 +7,7 @@
 #include <QPushButton>
 #include <QLineEdit>
 #include <QKeyEvent>
+
 #include "../LIBS/math_operations.h"
 
 
@@ -39,6 +40,7 @@ private slots:
     void CePressed();
     void DotPressed();
     void MatButPressed();
+    void HelpPressed();
     void OnTextChanged(const QString &text);
 
 protected:
