@@ -68,7 +68,7 @@ color: rgb(0, 0, 0);</string>
         <string notr="true">	color: #82005D;</string>
        </property>
        <property name="text">
-        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Pre použitie unárnych operátorov, ako je faktoriál a druhá odmocnina, začnite tým, že zadáte číslo, a potom kliknite na vybraný unárny operátor.&lt;/p&gt;&lt;p&gt;Pre použitie binárnych operátorov postupujte nasledovne: Najskôr zadajte prvý operand, potom vyberte daný binárny operátor, zadajte druhý operand a na záver kliknite na tlačidlo &amp;quot;=&amp;quot;.&lt;/p&gt;&lt;p&gt;Ak chcete použiť operácie ako n-odmocnina alebo n-tá mocnina, začnite tým, že zadáte číslo, ktoré chcete umocniť/odmocniť. Potom kliknite na vybranú funkciu, zadajte číslo &amp;quot;n&amp;quot; a nakoniec kliknite na &amp;quot;=&amp;quot;.&lt;/p&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;To use unary operators such as factorial and square root, start by entering a number, then click on the selected unary operator. &lt;/p&gt;&lt;p&gt;To use binary operators, proceed as follows: first enter the first operand, then select the binary operator, enter the second operand, and finally click the &amp;quot;=&amp;quot; button. &lt;/p&gt;&lt;p&gt;If you want to use operations such as the nth power or the nth power, start by entering the number you want to multiply/subtract. Then click on the selected function, enter the number &amp;quot;n&amp;quot;, and finally click &amp;quot;=&amp;quot;. &lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
        </property>
        <property name="wordWrap">
         <bool>true</bool>
