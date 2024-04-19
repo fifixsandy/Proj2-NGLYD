@@ -15,7 +15,8 @@ For more information refer to our user documentation.
 Screenshot
 ---------
 
-ADD SCREENSHOT OF GUI HERE
+![image](https://github.com/fifixsandy/Proj2-NGLYD/assets/147310126/a1734055-77fd-4c48-9736-44c57a2b47cb)
+
 
 Environment
 ---------
