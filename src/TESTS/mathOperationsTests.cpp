@@ -1,5 +1,5 @@
 /**
- * @file mathLibTests.cpp
+ * @file mathOperationsTests.cpp
  * 
  * @brief Performs tests on math operations from math_operations.h.
  * 
