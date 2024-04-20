@@ -58,6 +58,7 @@ public:
     * 
     * @param a The first double operand (dividend).
     * @param b The second double operand (divisor).
+    * @param errCode Adress where error code should be stored.
     * @return The quotient of a divided with b as a double.
     */ 
     double divide(double a, double b, MathErrorCode &errCode);
