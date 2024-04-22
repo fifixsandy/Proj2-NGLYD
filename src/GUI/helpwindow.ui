@@ -18,12 +18,12 @@
   </property>
   <property name="maximumSize">
    <size>
-    <width>500</width>
+    <width>512</width>
     <height>360</height>
    </size>
   </property>
   <property name="windowTitle">
-   <string>Dialog</string>
+   <string>Help</string>
   </property>
   <property name="styleSheet">
    <string notr="true">background-color: rgb(255, 255, 255);
