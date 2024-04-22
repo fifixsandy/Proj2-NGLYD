@@ -1,0 +1,4 @@
+#!/bin/bash
+
+rm -rf /opt/calculator
+rm -f /usr/share/applications/calculator.desktop
