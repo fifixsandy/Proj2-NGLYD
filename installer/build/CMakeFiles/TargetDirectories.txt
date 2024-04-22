@@ -1,8 +1,0 @@
-/root/znovu/Proj2-NGLYD/installer/build/CMakeFiles/package.dir
-/root/znovu/Proj2-NGLYD/installer/build/CMakeFiles/package_source.dir
-/root/znovu/Proj2-NGLYD/installer/build/CMakeFiles/edit_cache.dir
-/root/znovu/Proj2-NGLYD/installer/build/CMakeFiles/rebuild_cache.dir
-/root/znovu/Proj2-NGLYD/installer/build/CMakeFiles/list_install_components.dir
-/root/znovu/Proj2-NGLYD/installer/build/CMakeFiles/install.dir
-/root/znovu/Proj2-NGLYD/installer/build/CMakeFiles/install/local.dir
-/root/znovu/Proj2-NGLYD/installer/build/CMakeFiles/install/strip.dir

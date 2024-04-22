@@ -1,9 +1,0 @@
-Architecture: amd64
-Description: A simple calculator application created as project for subject IVS
-Maintainer: xfignam00@stud.fit.vutbr.cz
-Package: calculator
-Priority: optional
-Section: devel
-Version: 1.0
-Installed-Size: 188
-

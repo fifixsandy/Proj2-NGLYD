@@ -1,3 +1,0 @@
-/usr/share/icons/calculator_icon.xpm
-/opt/Calculator/calculator
-/usr/share/applications/calculator.desktop
