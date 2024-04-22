@@ -26,13 +26,13 @@ Ubuntu 64bit
 Dependencies
 ---------
 
-g++
-gcc
-make
-cmake
-doxygen
-libqt5widgets5
-qt6-base-dev
+- g++
+- gcc
+- make
+- cmake
+- doxygen
+- libqt5widgets5
+- qt6-base-dev
 
 Installation using installer
 ---------
