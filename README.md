@@ -23,6 +23,37 @@ Environment
 
 Ubuntu 64bit
 
+Dependencies
+---------
+
+g++
+gcc
+make
+cmake
+doxygen
+libqt5widgets5
+qt6-base-dev
+
+Installation using installer
+---------
+
+Check out user guide and this link: LINK
+
+Installation using make
+---------
+From src folder:
+
+| Command | Description |
+|--------|-------|
+| all | Compiles the whole program including profiling. |
+| pack | Packs the project for handover. |
+| clean | Deletes all files that are not supposed to be handed over. |
+| test | Runs tests for math library. |
+| doc | Generates documentation. |
+| run | Runs calculator. |
+| profile | Compiles the profiling. |
+| DEFAULT | Equal to make all. |
+
 
 Authors
 ------
