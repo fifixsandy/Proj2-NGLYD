@@ -7,7 +7,7 @@ GTEST_ZIP := googletest.zip
 GTEST_DIR := googletest
 
 
-.PHONY: profile test pack clean run
+.PHONY: profile test pack clean run doc
 
 all: profile calc
 
@@ -25,14 +25,14 @@ test:
 	@cd TESTS && mkdir -p build && cd build && cmake .. && make -s && ./mathTest
 
 clean:
-	@rm -rf ./TESTS/build/ ./PROFILING/stddev ./GUI/build/
-
-
-pack:
-	tar -czvf ../NGLYD.gz Makefile CMakeLists.txt TESTS PROFILING LIBS GUI 
+	@rm -rf ./TESTS/build/ ./PROFILING/stddev ./GUI/build/ ./doc/
+ 
 	
 doc:
-	doxygen Doxyfile && rm -f warning_doxygen.tx
+	doxygen Doxyfile && rm -f doxygenWarning.txt
 
 run:
-	@cd GUI/build && ./Calculator
+	@cd GUI && mkdir -p build && cd build && cmake .. && make -s && ./Calculator
+
+pack: clean
+	tar -czvf ../xnovakf00_xskovaj00_xmalegt00_xfignam00.gz ../../Proj2-NGLYD
