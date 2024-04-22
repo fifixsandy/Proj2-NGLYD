@@ -16,6 +16,7 @@
  * @author xskovaj00
  */
 
+#define FACTORIAL_MAX 20    /// Maximum number factorial can be calculated of.
 
 /**
  * @brief Enumerates error codes for mathematical operations in the MathOps class.

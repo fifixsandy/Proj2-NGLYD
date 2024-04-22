@@ -45,7 +45,7 @@ double MathOps::squareRoot(double a, MathErrorCode &errCode) {
 }
 
 unsigned long long MathOps::factorial(int a, MathErrorCode &errCode) {
-    if (a < 0) {
+    if (a < 0 || a > FACTORIAL_MAX) {
         errCode = NEGATIVE_FACTORIAL_INPUT;
         return 0;
     }
