@@ -203,6 +203,10 @@ void MainWindow::MatButPressed(){
         }
     }
     else{
+        if(text.isEmpty()){
+            LastPressedButton = Button;
+            return;
+        }
         BinOperations(LastPressedButton->objectName(), CalVarDouble, text,
                       ConversionCheck, MathErr);
 
@@ -271,7 +275,7 @@ void MainWindow::UnOperations(QString ButtonName, QString AOperand, double &Resu
         Result = static_cast<double>(tmp);
     }
     else if(ButtonName == "ButtonSquareRoot"){
-        Result = Math.squareRoot(AOperand.toInt(&ConversionCheck), MathErr);
+        Result = Math.squareRoot(AOperand.toDouble(&ConversionCheck), MathErr);
     }
 }
 
