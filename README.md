@@ -33,7 +33,7 @@ Dependencies
 - doxygen
 - libqt5widgets5
 - qt6-base-dev
-- graphwiz
+- graphviz
 
 Installation using installer
 ---------
