@@ -23,7 +23,7 @@ Environment
 
 Ubuntu 64bit
 
-Dependencies
+Dependencies for whole project
 ---------
 
 - g++
@@ -34,15 +34,20 @@ Dependencies
 - libqt5widgets5
 - qt6-base-dev
 - graphviz
+- build-essential libgl1-mesa-dev
 
 Installation using installer
 ---------
 
+Make sure you have installed at least these dependencies:
+- qt6-base-dev
+- libqt5widgets5
+  
 Check out user guide and this link: https://youtu.be/7aKtf3fzd5Y
 
 Installation using make
 ---------
-Make sure that you have installed all needed dependencies
+Make sure that you have installed all needed dependencies.
 
 From src folder:
 
