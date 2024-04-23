@@ -1,3 +1,0 @@
-#!/bin/bash
-sudo chmod +x /opt/Calculator/calculator
-sudo desktop-file-install /usr/share/applications/calculator.desktop
