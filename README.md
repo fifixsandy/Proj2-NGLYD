@@ -37,10 +37,12 @@ Dependencies
 Installation using installer
 ---------
 
-Check out user guide and this link: LINK
+Check out user guide and this link: https://youtu.be/7aKtf3fzd5Y
 
 Installation using make
 ---------
+Make sure that you have installed all needed dependencies
+
 From src folder:
 
 | Command | Description |
