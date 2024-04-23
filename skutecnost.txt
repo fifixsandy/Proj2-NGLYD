@@ -1,1 +1,11 @@
-tento soubor bude obsahovat rozdil mezi planem projektu a skutecnosti
+TERMÍNY
+Stanovené termíny sa nám až na malé výnimky podarilo dodržiavať. Tie nedodržané však nepresiahli 2 dni a neboli spôsobené nečinnosťou, ale podcenením problému (a zabudnutím na štátne sviatky).
+
+KOMUNIKÁCIA
+Komunikácia prebiehala bez problémov. Niektoré nástroje sme však nepoužili, pretože neboli potreba (Doodle, telefón). GitHub issues sme síce založili, ale taktiež nepotrebovali ku organizácii.
+Discord ako platforma bol najlepšou voľbou pre komunikáciu (využili sme aj GITHUB BOT).
+
+ROZDELENIE PRÁCE
+Rozdelenie práce bolo až na malé výnimky ideálne. Ak niekto mal veľa práce a iný člen týmu zas nie, tak sa dopomohlo.
+
+Iné rozdiely medzi plánom a realitou sme nezaznamenali a projekt z hľadiska tímovej práce hodnotíme pozitívne.
