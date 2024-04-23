@@ -1,0 +1,8 @@
+/root/znovu/Proj2-NGLYD/calc_pack_generator/build/CMakeFiles/package.dir
+/root/znovu/Proj2-NGLYD/calc_pack_generator/build/CMakeFiles/package_source.dir
+/root/znovu/Proj2-NGLYD/calc_pack_generator/build/CMakeFiles/edit_cache.dir
+/root/znovu/Proj2-NGLYD/calc_pack_generator/build/CMakeFiles/rebuild_cache.dir
+/root/znovu/Proj2-NGLYD/calc_pack_generator/build/CMakeFiles/list_install_components.dir
+/root/znovu/Proj2-NGLYD/calc_pack_generator/build/CMakeFiles/install.dir
+/root/znovu/Proj2-NGLYD/calc_pack_generator/build/CMakeFiles/install/local.dir
+/root/znovu/Proj2-NGLYD/calc_pack_generator/build/CMakeFiles/install/strip.dir

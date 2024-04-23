@@ -1,0 +1,9 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=Calculator
+Path=/opt/Calculator
+Exec=/opt/Calculator/calculator
+Icon=/usr/share/icons/calculator_icon.xpm
+Terminal=false
+Categories=Utility;Application;
