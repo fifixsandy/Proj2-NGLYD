@@ -13,7 +13,8 @@ all: profile calc test_compile
 
 
 calc:
-	@cd GUI && mkdir -p build && cd build && cmake .. && make -s 
+	@cd GUI && mkdir -p build && cd build && cmake .. && make -s
+	@cp ./GUI/build/Calculator ../calc_pack_generator/deployment/calculator
 
 run: calc
 	@cd GUI/build/ && ./Calculator
@@ -25,12 +26,11 @@ profile:
 	@echo "Profiling compilation completed."
 
 
-test: test_compile
-	cd TESTS/build && ./mathTest 
-
 test_compile:
 	@cd TESTS && mkdir -p build && cd build && cmake .. && make -s 
 
+test: test_compile
+	cd TESTS/build && ./mathTest 
 	
 doc:
 	doxygen Doxyfile 
@@ -47,7 +47,7 @@ pack: clean
 	
 
 	mkdir -p ../../$(TEAM_PACK_NAME)/install
-	cp -a ../packages/. ../../$(TEAM_PACK_NAME)/install
+	cp -a ../installer/. ../../$(TEAM_PACK_NAME)/install
 
 	doxygen Doxyfile
 	mkdir ../../$(TEAM_PACK_NAME)/doc
@@ -58,4 +58,3 @@ pack: clean
 	rm -f doxygenWarning.txt
 	rm -rf ../../$(TEAM_PACK_NAME)
 
-#tar -czvf ../../$(TEAM_PACK_NAME).gz $(TEAM_PACK_NAME)
